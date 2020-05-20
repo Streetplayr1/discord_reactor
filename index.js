@@ -13,9 +13,9 @@ client.on('message', message => {
 
    if (message.channel.id == '638581523498532896') {
        if (message.content === 'https://www.twitch.tv/icegamer') {
-           message.delete(1000);
+           //message.delete();
+           message.channel.send("Mia, no one gives a fuck about your stream, the link is now forbidden on this server. Move along...");
        }
-        //message.channel.send("Mia, no one gives a fuck about your stream, the link is now forbidden on this server. Move along...");
     }
 });
 
