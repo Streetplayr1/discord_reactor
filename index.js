@@ -17,8 +17,8 @@ client.on('message', message => {
     }
     */
 
-   if ((message.channel.id == '638581523498532896') && (message.author == 'Street#5403')) {
-        message.delete(1000);
+   if ((message.channel.id == '638581523498532896') && (message.content.find("https://www.twitch.tv/icegamer") != -1)) {
+        message.delete(3000);
         message.channel.send("Mia, no one gives a fuck about your stream, the link is now forbidden on this server. Move along...");
     }
 });
