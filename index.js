@@ -5,7 +5,7 @@ client.on('ready', () => {
     console.log("Online.");
 })
 
-client.on('message', message => {
+client.event('message', message => {
     if (message.channel.id == '651494260134117376') {
         message.react(':updoot:692862052599070720');
         message.react(':downdoot:692862024241250334');
@@ -16,7 +16,6 @@ client.on('message', message => {
         message.channel.send("Mia, no one gives a fuck about your stream, the link is now forbidden on this server. Move along...");
     }
     */
-
    if ((message.channel.id == '638581523498532896') && (message.content == 'https://www.twitch.tv/icegamer')) {
         message.delete(3000);
         message.channel.send("Mia, no one gives a fuck about your stream, the link is now forbidden on this server. Move along...");
