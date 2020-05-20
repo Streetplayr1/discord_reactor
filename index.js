@@ -7,8 +7,8 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.channel.id == '651494260134117376') {
-        message.react(':updoot:692862052599070720');
-        message.react(':downdoot:692862024241250334');
+        await message.react(':updoot:692862052599070720');
+        await message.react(':downdoot:692862024241250334');
     }
 
 /*
