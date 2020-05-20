@@ -11,11 +11,6 @@ client.on('message', message => {
         message.react(':downdoot:692862024241250334');
     }
 
-
-   /*if (message.channel.id == '638581523498532896' || message.channel.id == '676135196894036000') {
-        message.delete(1000);
-        message.channel.send("Mia, no one gives a fuck about your stream, the link is now forbidden on this server. Move along...");
-    }*/
 });
 
 client.login(process.env.token);
