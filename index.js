@@ -15,7 +15,7 @@ client.on('message', message => {
     // Version 1.1.0: Mia cannot post her stream in general-chat
     var clientReply = "Mia, no one cares about your fucking stream. Message removed, move along. Message self-destructs in twenty seconds.";
     if (message.channel.id == '638581523498532896') {
-        if (message.author.id == "125746194625462272") {
+        if (message.author.id == "147496803409985536") {
             if (message.content.toLowerCase().includes('icegamer')) {
                 message.delete({ timeout: 2500 });
                 message.channel.send(clientReply, { timeout: 2000})
