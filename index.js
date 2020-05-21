@@ -16,7 +16,7 @@ client.on('message', message => {
     if (message.channel.id == '638581523498532896') {
         if (message.author.id == "216467577268862976") {
             if (message.content.toLowerCase().trim().includes('icegamer')) {
-                message.delete({ timeout: 1000})
+                message.delete({ timeout: 1500})
                     .then(message.channel.send("Mia, no one cares about your fucking stream. Message removed, move along. Message self-destructs in twenty seconds."))
                     .then(sentMessage.delete({ timeout: 20000 }));
             }
