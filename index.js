@@ -11,6 +11,13 @@ client.on('message', message => {
         message.react(':downdoot:692862024241250334');
     }
 
+    if (message.channel.id == '638581523498532896') {
+        if (message.content.includes('https://www.twitch.tv/icegamer/')) {
+            message.delete(1000);
+            message.channel.send("Mia, no one cares about your fucking stream. Message removed, move along...");
+        }
+    }
+
 });
 
 client.login(process.env.token);
