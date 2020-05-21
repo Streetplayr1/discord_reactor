@@ -13,9 +13,8 @@ client.on('message', message => {
 
     if (message.channel.id == '638581523498532896') {
         if (message.content.includes('icegamer')) {
-            sleep(1000)
             message.delete()
-            .then(message.channel.send("Mia, no one cares about your fucking stream. Message removed, move along..."));
+                .then(message.channel.send("Mia, no one cares about your fucking stream. Message removed, move along..."));
         }
     }
 
