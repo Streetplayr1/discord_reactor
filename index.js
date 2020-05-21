@@ -18,7 +18,7 @@ client.on('message', message => {
             if (message.content.toLowerCase().trim().includes('icegamer')) {
                 message.delete({ timeout: 1000})
                     .then(message.channel.send("Mia, no one cares about your fucking stream. Message removed, move along. Message self-destructs in thirty seconds."))
-                    .then(msg.delete({ timeout: 30000 }));
+                    .then(message.delete({ timeout: 30000 }));
             }
         }
     }
