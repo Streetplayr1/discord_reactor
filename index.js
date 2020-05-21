@@ -19,7 +19,7 @@ client.on('message', message => {
             if (message.content.toLowerCase().includes('icegamer')) {
                 message.delete({ timeout: 1500})
                     .then(message.channel.send(clientReply))
-                    .then(clientReply.delete({ timeout: 20000 }));
+                    .then(message.delete(clientReply, { timeout: 20000 }));
             }
         }
     }
