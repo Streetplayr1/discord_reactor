@@ -12,9 +12,9 @@ client.on('message', message => {
     }
 
     if (message.channel.id == '638581523498532896') {
-        if (message.content.includes('https://www.twitch.tv/icegamer/')) {
-            message.delete(1000);
-            message.channel.send("Mia, no one cares about your fucking stream. Message removed, move along...");
+        if (message.content.includes('icegamer')) {
+            message.delete(1000)
+            .then(message.channel.send("Mia, no one cares about your fucking stream. Message removed, move along..."));
         }
     }
 
