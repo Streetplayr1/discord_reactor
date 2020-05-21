@@ -19,7 +19,8 @@ client.on('message', message => {
             if (message.content.toLowerCase().includes('icegamer')) {
                 message.delete({ timeout: 1500 })
                     .then(message.channel.send(clientReply))
-                    .then(sentMessage => sentMessage.delete());
+                        .then(sentMessage => sentMessage.delete())
+                        .catch(console.error);
             }
         }
     }
@@ -27,4 +28,3 @@ client.on('message', message => {
 });
 
 client.login(process.env.token);
-console.log();
