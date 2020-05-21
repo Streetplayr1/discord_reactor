@@ -18,7 +18,7 @@ client.on('message', message => {
         if (message.author.id == "125746194625462272") {
             if (message.content.toLowerCase().includes('icegamer')) {
                 message.delete({ timeout: 1500 })
-                    .then(message.channel.send(clientReply))
+                (message.channel.send(clientReply))
                         .then(sentMessage => sentMessage.delete())
                         .catch(console.error);
             }
