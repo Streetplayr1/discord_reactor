@@ -8,7 +8,7 @@ client.on('ready', () => {
 client.on('message', message => {
     // Version 1.0.0: React to meme-off posts that are not pinned messages
     if (message.channel.id == '651494260134117376') {
-        if (message.type == "PINS_ADD") {
+        if (message.type === "PINS_ADD") {
             message.channel.send("Congratulations!", { timeout: 2000})
                 .catch(console.error);
         } else {
