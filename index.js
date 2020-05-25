@@ -6,10 +6,12 @@ client.on('ready', () => {
 })
 
 client.on('message', message => {
-    // Version 1.0.0: React to meme-off posts
+    // Version 1.0.0: React to meme-off posts that are not pinned messages
     if (message.channel.id == '651494260134117376') {
-        message.react(':updoot:692862052599070720');
-        message.react(':downdoot:692862024241250334');
+        if (!message.content.toLowerCase().includes('pinned a messageto this channel')) {
+            message.react(':updoot:692862052599070720');
+            message.react(':downdoot:692862024241250334');
+        }
     }
 
     // Version 1.1.0: Mia cannot post her stream in general-chat
