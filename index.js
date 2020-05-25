@@ -12,8 +12,10 @@ client.on('message', message => {
             message.channel.send("Congratulations!", { timeout: 2000})
                 .catch(console.error);
         } else {
-            message.react(':updoot:692862052599070720');
-            message.react(':downdoot:692862024241250334');
+            if (message.authr != client) {
+                message.react(':updoot:692862052599070720');
+                message.react(':downdoot:692862024241250334');
+            }
         }
     }
 
