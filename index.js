@@ -1,5 +1,7 @@
-const Discord = require('discord.js');
+const { Discord, RichEmbed } = require('discord.js');
 const client = new Discord.Client();
+
+const PREFIX = "sb!";
 
 client.on('ready', () => {
     console.log("Online.");
@@ -30,6 +32,22 @@ client.on('message', message => {
                         .catch(console.error);
             }
         }
+    }
+
+    // Version 1.2.0: Create a queue of polls entered in by the staff
+    let args = message.content.substring(PREFIX.length).split(" ");
+
+    switch(args[0]) {
+
+        case "help":
+            const Embed = new RichEmbed()
+            .setColor(0xFFC300)
+            .setTitle("Initiate Poll")
+            .setDescription("sb!poll to create a new poll, sb!format for formatting help, and sb!queue to view the queue.");
+
+            message.channel.send(Embed);
+        break;
+
     }
 
 });
