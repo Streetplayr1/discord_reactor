@@ -69,8 +69,10 @@ client.on('message', message => {
             if (msgArgs == isFormatted()) {
                 createPoll();
             } else {
-
+                message.channel.send(EmbedBadCreation);
             }
+
+            break;
         
         case "format":
             const EmbedFormat = new Discord.MessageEmbed()
