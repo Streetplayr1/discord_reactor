@@ -40,7 +40,7 @@ client.on('message', message => {
     switch(args[0]) {
 
         case "help":
-            const Embed = new Discord.RichEmbed()
+            const Embed = new Discord.MessageEmbed()
             .setColor(0xFFC300)
             .setTitle("Initiate Poll")
             .setDescription("sb!poll to create a new poll, sb!format for formatting help, and sb!queue to view the queue.");
