@@ -37,15 +37,46 @@ client.on('message', message => {
     // Version 1.2.0: Create a queue of polls entered in by the staff
     let args = message.content.substring(PREFIX.length).split(" ");
 
+    const EmbedIncorrect = new Discord.MessageEmbed()
+    .setColor(0xFFC300)
+    .setTitle("Incorrect Usage")
+    .setDescription("Command not recognized. Please use !help for instructions on using the poll feature.");
+
     switch(args[0]) {
 
         case "help":
-            const Embed = new Discord.MessageEmbed()
+            const EmbedHelp = new Discord.MessageEmbed()
             .setColor(0xFFC300)
-            .setTitle("Initiate Poll")
-            .setDescription("sb!poll to create a new poll\nsb!format for formatting help\nsb!queue to view the queue.");
+            .setTitle("Poll Guide")
+            .setDescription("sb!create followed by the correct format will create a new poll\nsb!format for formatting help when using the create command\nsb!queue to view the current poll queue, ask Street if rearrange is needed\nsb!delete followed by the ID of the poll to remove it from the queue");
 
-            message.channel.send(Embed);
+            message.channel.send(EmbedHelp);
+
+            break;
+        
+        case "create":
+            break;
+        
+        case "format":
+            const EmbedFormat = new Discord.MessageEmbed()
+            .setColor(0xFFC300)
+            .setTitle("Poll Formatting")
+            .setDescription("sb!create {question}, {reactions}, {answers}\nThe question MUST end with a question mark\nSeparate each reaction with a comma\nSeparate each answer option with a comma\nBrackets are required, separate each bracket with a comma\nTo delete a poll, use sb!delete {id}, brackets here are NOT required.");
+
+            if (!args[1]) {
+                message.channel.send(EmbedIncorrect);
+            } else {
+                message.channel.send(EmbedFormat);
+            }
+
+            break;
+
+        case "queue":
+            break;
+
+        case "delete":
+            break;
+
         break;
 
     }
