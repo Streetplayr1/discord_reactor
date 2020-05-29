@@ -66,7 +66,7 @@ client.on('message', message => {
             break;
         
         case "create":
-            if (msgArgs == isFormatted()) {
+            if (isFormatted(msgArgs)) {
                 createPoll();
             } else {
                 message.channel.send(EmbedBadCreation);
