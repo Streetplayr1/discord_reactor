@@ -40,7 +40,7 @@ client.on('message', message => {
     const EmbedIncorrect = new Discord.MessageEmbed()
     .setColor(0xFFC300)
     .setTitle("Incorrect Usage")
-    .setDescription("Command not recognized. Please use !help for instructions on using the poll feature.");
+    .setDescription("Command not recognized. Please use sb!help for instructions on using the poll feature.");
 
     switch(args[0]) {
 
@@ -61,12 +61,12 @@ client.on('message', message => {
             const EmbedFormat = new Discord.MessageEmbed()
             .setColor(0xFFC300)
             .setTitle("Poll Formatting")
-            .setDescription("sb!create {question}, {reactions}, {answers}\nThe question MUST end with a question mark\nSeparate each reaction with a comma\nSeparate each answer option with a comma\nBrackets are required, separate each bracket with a comma\nTo delete a poll, use sb!delete {id}, brackets here are NOT required.");
+            .setDescription("sb!create {question}, {reactions}, {answers}\nThe question MUST end with a question mark\nSeparate each reaction with a comma\nSeparate each answer option with a comma\nBrackets are required, separate each bracket with a comma\nTo delete a poll, use sb!delete {id}, brackets here are NOT required.\n\nEXAMPLE USAGE:\nsb!create {Is Street Cool?}, {:+1:, :-1:}, {Yes, No}");
 
             if (!args[1]) {
-                message.channel.send(EmbedIncorrect);
-            } else {
                 message.channel.send(EmbedFormat);
+            } else {
+                message.channel.send(EmbedIncorrect);
             }
 
             break;
