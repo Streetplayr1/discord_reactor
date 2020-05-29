@@ -101,6 +101,7 @@ client.on('message', message => {
     }
     
     function createPoll() {
+        message.channel.send(EmbedPollCreated);
         break;
     }
 
