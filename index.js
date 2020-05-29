@@ -48,6 +48,11 @@ client.on('message', message => {
     .setTitle("Incorrect Formatting")
     .setDescription("Something went wrong with your formatting. Please use sb!format for instructions on creating a new poll.");
 
+    const EmbedPollCreated = new Discord.MessageEmbed()
+    .setColor(0xFFC300)
+    .setTitle("Poll Created")
+    .setDescription("Poll successfully created. To view a list of the current polls in the queue, use sb!queue");
+
     switch(args[0]) {
 
         case "help":
@@ -92,7 +97,7 @@ client.on('message', message => {
     }
 
     function isFormatted(msgArgs) {
-        break;
+        return false;
     }
     
     function createPoll() {
