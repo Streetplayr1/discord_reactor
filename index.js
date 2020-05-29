@@ -43,7 +43,7 @@ client.on('message', message => {
             const Embed = new Discord.MessageEmbed()
             .setColor(0xFFC300)
             .setTitle("Initiate Poll")
-            .setDescription("sb!poll to create a new poll, sb!format for formatting help, and sb!queue to view the queue.");
+            .setDescription("sb!poll to create a new poll\nsb!format for formatting help\nsb!queue to view the queue.");
 
             message.channel.send(Embed);
         break;
