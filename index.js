@@ -36,11 +36,17 @@ client.on('message', message => {
 
     // Version 1.2.0: Create a queue of polls entered in by the staff
     let args = message.content.substring(PREFIX.length).split(" ");
+    let msgArgs = args.slice(1).join(" ");
 
     const EmbedIncorrect = new Discord.MessageEmbed()
     .setColor(0xFFC300)
     .setTitle("Incorrect Usage")
     .setDescription("Command not recognized. Please use sb!help for instructions on using the poll feature.");
+
+    const EmbedBadCreation = new Discord.MessageEmbed()
+    .setColor(0xFFC300)
+    .setTitle("Incorrect Formatting")
+    .setDescription("Something went wrong with your formatting. Please use sb!format for instructions on creating a new poll.");
 
     switch(args[0]) {
 
@@ -55,13 +61,17 @@ client.on('message', message => {
             break;
         
         case "create":
-            break;
+            if (msgArgs == isFormatted()) {
+                createPoll();
+            } else {
+
+            }
         
         case "format":
             const EmbedFormat = new Discord.MessageEmbed()
             .setColor(0xFFC300)
             .setTitle("Poll Formatting")
-            .setDescription("sb!create {question}, {reactions}, {answers}\nThe question MUST end with a question mark\nSeparate each reaction with a comma\nSeparate each answer option with a comma\nBrackets are required, separate each bracket with a comma\nTo delete a poll, use sb!delete {id}, brackets here are NOT required.\n\nEXAMPLE USAGE:\nsb!create {Is Street Cool?}, {:+1:, :-1:}, {Yes, No}");
+            .setDescription("sb!create {question}, {reactions}, {answers}\nThe question MUST end with a question mark\nSeparate each reaction with a comma\nSeparate each answer option with a comma\nBrackets are required, separate each bracket with a comma\nTo delete a poll, use sb!delete {id}, brackets here are NOT required.\n\nEXAMPLE USAGE:\nsb!create {Is Street Cool?}, {:+1:, :-1:}, {Yes, No}\nsb!delete 4 will delete the poll with ID of 4");
 
             if (!args[1]) {
                 message.channel.send(EmbedFormat);
@@ -79,6 +89,14 @@ client.on('message', message => {
 
         break;
 
+    }
+
+    function isFormatted(msgArgs) {
+        break;
+    }
+    
+    function createPoll() {
+        break;
     }
 
 });
