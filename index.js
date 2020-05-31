@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const pollEmbed = require('discord.js-poll-embed');
 
 const PREFIX = "sb!";
 
@@ -23,14 +24,12 @@ client.on('message', message => {
 
     // Version 1.1.0: Mia cannot post her stream in general-chat
     var clientReply = "Mia, no one cares about your fucking stream. Message removed, move along. Message self-destructs in twenty seconds.";
-    if (message.channel.id == '638581523498532896') {
-        if (message.author.id == "147496803409985536") {
-            if (message.content.toLowerCase().includes('icegamer')) {
-                message.delete({ timeout: 2500 });
-                message.channel.send(clientReply, { timeout: 2000})
-                        .then(sentMessage => sentMessage.delete({ timeout: 20000}))
-                        .catch(console.error);
-            }
+    if (message.author.id == "147496803409985536") {
+        if (message.content.toLowerCase().includes('icegamer') || message.content.toLowerCase().includes('stream') || message.content.toLowerCase().includes('twitch') || message.content.toLowerCase().includes('live')) {
+            message.delete({ timeout: 2500 });
+            message.channel.send(clientReply, { timeout: 2000})
+                    .then(sentMessage => sentMessage.delete({ timeout: 20000}))
+                    .catch(console.error);
         }
     }
 
@@ -78,7 +77,7 @@ client.on('message', message => {
             const EmbedFormat = new Discord.MessageEmbed()
             .setColor(0xFFC300)
             .setTitle("Poll Formatting")
-            .setDescription("sb!create {question}, {reactions}, {answers}\nThe question MUST end with a question mark\nSeparate each reaction with a comma\nSeparate each answer option with a comma\nBrackets are required, separate each bracket with a comma\nTo delete a poll, use sb!delete {id}, brackets here are NOT required.\n\nEXAMPLE USAGE:\nsb!create {Is Street Cool?}, {:+1:, :-1:}, {Yes, No}\nsb!delete 4 will delete the poll with ID of 4");
+            .setDescription("sb!create {question}, {reactions}, {answers}, {author}\nThe question MUST end with a question mark\nSeparate each reaction with a comma\nSeparate each answer option with a comma\nBrackets are required, separate each bracket with a comma\nTo delete a poll, use sb!delete {id}, brackets here are NOT required.\n\nEXAMPLE USAGE:\nsb!create {Is Street Cool?}, {:+1:, :-1:}, {Yes, No}, {Street}\nsb!delete 4 will delete the poll with ID of 4");
 
             if (!args[1]) {
                 message.channel.send(EmbedFormat);
