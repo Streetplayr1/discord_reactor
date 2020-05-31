@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const pollEmbed = require('discord.js-poll-embed');
 
 const PREFIX = "sb!";
 
