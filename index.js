@@ -13,7 +13,11 @@ client.on('message', message => {
         if (message.type === "PINS_ADD") {
             message.channel.send("Congratulations! Please check #announcements for details on the next meme-off.", { timeout: 2000})
                 .catch(console.error);
-        } else {
+        } else if (message.author.id == "393144835152019457") {
+	    message.react(':updoot:692862052599070720');
+	    message.channel.send("We don't downvote Caitlin's memes. We love Caitlin. <3", { timeout: 2000})
+		.catch(console.error);
+	} else {
             if (!message.author.bot) {
                 message.react(':updoot:692862052599070720');
                 message.react(':downdoot:692862024241250334');
