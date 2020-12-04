@@ -26,7 +26,7 @@ client.on('message', message => {
     }
 
     // Version 1.1.0: Mia cannot post her stream in general-chat
-    var clientReply = "Mia, no one cares about your fucking stream. Message removed, move along. Message self-destructs in twenty seconds.";
+    var clientReply = "Mia, no one cares about your stream. Message removed, move along. Message self-destructs in twenty seconds.";
     if (message.author.id == "147496803409985536" || message.author.id == "140473628885123072") {
         if (message.content.toLowerCase().includes('icegamer') || message.content.toLowerCase().includes('stream') || message.content.toLowerCase().includes('twitch') || message.content.toLowerCase().includes('live')) {
             message.delete({ timeout: 2500 });
